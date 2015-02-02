@@ -1,15 +1,11 @@
-'use strict';
+"use strict";
 (function() {
     
-    // example usage:
-    // webHelper.openUrl("http://www.google.com")
-
-	var currentStatus = 0;
-	
     var app = {
         init: function() {
             this.fixBottomMenuItemsForSmallerScreens();
-            var viewModel = new ViewModel();
+			var viewService = new ViewService();
+            var viewModel = new ViewModel(viewService);
             this.bindApp(viewModel);
         },
         bindApp:function(viewModel){
@@ -33,7 +29,7 @@
         }
     };
 
-    document.addEventListener('deviceready', function() {
+    document.addEventListener("deviceready", function() {
        app.init();
     }, false);
 })();

@@ -64,7 +64,8 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'app/*',
-    '!app/*.html',
+    'app/*.html',
+	'!app/cordova.js',
     'node_modules/apache-server-configs/dist/www/.htaccess'
   ], {
     dot: true
@@ -78,6 +79,7 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('dist/www/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
+
 
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {

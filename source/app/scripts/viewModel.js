@@ -1,5 +1,9 @@
-	function ViewModel(){
+	"use strict";
+	function ViewModel(viewService){
 		var self = this;
+		
+		self.viewService = viewService;
+		
 		self.message = ko.observable("Press to Ring");
 		self.color = ko.observable("alert alert-info");
 		
@@ -33,6 +37,7 @@
 			self.message("Ringing....");
 			self.color("alert alert-warning");
 			setTimeout(5500, function(){ unring(); });
+			self.viewService.playAudio("audio/2.mp3");
 		};
 		
 		self.unring = function(){

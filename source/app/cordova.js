@@ -13,6 +13,10 @@
                 if (!hasScriptTagForCordova()) {
                     addCordovaJs();
                 } else {
+					
+					window.Media = function Media(url,success,error){};
+					
+				
                     if (window.cordova === undefined) {
                         window.cordova = {
                         };
