@@ -1,4 +1,3 @@
-	"use strict";
 	function ViewModel(viewService){
 		var self = this;
 		
@@ -8,10 +7,6 @@
 		self.color = ko.observable("alert alert-info");
 		
 		self.setMessageFromStatus = function(model){
-
-			var status = model.level;
-			//var currentStatus = self.status();
-			self.status(status);
 			
 			/*
 			if(status === 0){
@@ -36,8 +31,13 @@
 		self.ring = function(){
 			self.message("Ringing....");
 			self.color("alert alert-warning");
-			setTimeout(5500, function(){ unring(); });
-			self.viewService.playAudio("audio/2.mp3");
+			setTimeout(function(){ self.unring(); },5500);
+			//try{
+				//self.viewService.playAudio("audio/2.mp3");
+			//}catch(e){
+			//	alert(e);
+			//}
+			alert("Ring, ring...");
 		};
 		
 		self.unring = function(){
