@@ -1,21 +1,15 @@
-	function ViewModel(viewService){
+	function ViewModel(){
 		var self = this;
-		self.viewService = viewService;
-		
-		self.message = ko.observable("Checking....");
-		self.status = ko.observable(0);
-		self.didStatusChange = ko.observable(false);
-		self.color = ko.observable("alert alert-success");
+		self.message = ko.observable("Press to Ring");
+		self.color = ko.observable("alert alert-info");
 		
 		self.setMessageFromStatus = function(model){
 
 			var status = model.level;
-			var currentStatus = self.status();
+			//var currentStatus = self.status();
 			self.status(status);
 			
-			// is the status the same?
-			self.didStatusChange(currentStatus !== status);
-			
+			/*
 			if(status === 0){
 				self.message("No load shedding.");
 				self.color("alert alert-success");
@@ -32,23 +26,20 @@
 				self.message("Unknown status?!");
 				self.color("alert alert-warning");
 			}
-		};
-
-		self.setError = function(){
-			self.message("Please ensure your data is on.");
-			self.color("alert alert-danger");
-		};
-
-		self.refresh = function(){
-			self.message("Checking...");
-			self.viewService.fetchData(self, false);
+			*/
 		};
 		
-		self.polledRefresh = function(){
-			self.message("Checking...");
-			self.viewService.fetchData(self, true);
+		self.ring = function(){
+			self.message("Ringing....");
+			self.color("alert alert-warning");
+			setTimeout(5500, function(){ unring(); });
 		};
-
+		
+		self.unring = function(){
+			self.message = ko.observable("Press to Ring");
+			self.color = ko.observable("alert alert-info");
+		};
+		
 		self.bugReport = function(){
 			closeMenu();
 			var link = "http://goo.gl/forms/wrnDilSAOo";
@@ -58,7 +49,6 @@
 		self.showAbout = function(){
 			closeMenu();
 			$("#aboutApp").toggleClass("collapse");
-			//alert("Monitor Eskom's load shedding status.\nAnything else is futile.\n\nDeveloped by StoneAge technologies.");
 		};
 
 		self.closeAbout = function(){

@@ -8,26 +8,9 @@
 	
     var app = {
         init: function() {
-
-			//var waitTime = 600000; // 10 minnutes
-			var waitTime = 300000; // 5 minutes
-            //var waitTime = 10000;
-		
             this.fixBottomMenuItemsForSmallerScreens();
-            var viewService = new ViewService();
-            var viewModel = new ViewModel(viewService);
-
-            this.fetchStatus(viewService, viewModel);
+            var viewModel = new ViewModel();
             this.bindApp(viewModel);
-			
-			this.activateMonitor(viewModel, waitTime);
-        },
-		activateMonitor: function(viewModel, waitTime){
-			// refresh status
-			setInterval(function(){viewModel.polledRefresh();}, waitTime);
-		},
-        fetchStatus:function(viewService, viewModel){
-            viewService.fetchData(viewModel, false);
         },
         bindApp:function(viewModel){
             
@@ -48,26 +31,6 @@
                 bottomList.css("position", "relative");
             }
         }
-		/*
-		registerPushNotificationHandler: function(){
-			try{
-				var pushNotification window.plugins.pushNotification; 
-				pushNotification.register(
-					function(result){
-						window.plugin.notification.local.add({ message: 'Great app! '+result});
-					},
-					function(error){
-						alert('error='+error);
-					},
-					{
-						"senderID":"wise-program-789",
-						"ecb":"onNotification"
-					}
-				);
-			}catch(e){
-				alert(e);
-			}
-		}*/
     };
 
     document.addEventListener('deviceready', function() {
