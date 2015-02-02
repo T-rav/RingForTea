@@ -10,10 +10,17 @@ ViewService.prototype = {
 				},
 				// error callback
 				function(err) {
-					console.log("playAudio():Audio Error: "+err);
+					console.log("playAudio():Audio Error: "+JSON.stringify(err)+" "+url);
 			});
 
 			// Play audio
 			my_media.play();
+			
+			// Mute volume after 2 seconds
+			setTimeout(function() {
+				my_media.stop();
+				my_media.release();
+			}, 4500);
+
 		}
 	};

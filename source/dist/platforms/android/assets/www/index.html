@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="An application to monitor the Eskom loadsheding status">
+    <meta name="description" content="Ring for Tea">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ring For Tea</title>
 
@@ -14,7 +14,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Crypto Stats">
+    <meta name="apple-mobile-web-app-title" content="Ring For Tea">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
@@ -70,11 +70,11 @@
 			<span style="position:fixed;top:20%;left:25%;">
 				<h2><strong>Ring</strong> For <strong>Tea</strong></h2>
 				<div data-bind="css: color">
-					<h5 style="margin-left:3px; margin-top:10px; text-align:center;" data-bind="text:message; click: ring"></h5>
+					<h5 style="margin-left:3px; margin-top:10px; text-align:center;" data-bind="text:message, click: ring"></h5>
 				</div>
 			</span>
 			<span style="position:fixed;top:50%;left:35%;">
-				<img src="images/small_desk_bell.png" height="20%" width="90%"/>
+				<img src="images/small_desk_bell.png" height="20%" width="90%" data-bind="click: ring"/>
 			</span>
 		</main>
 
@@ -94,8 +94,9 @@
 			Press the bell to ring for Tea. <br/>
 			The person you are requesting Tea from must be in the room or nearby. <br/><br/><br/>
 			<img src="images/desk_bell_512.png" height="275" width="95%"/>
-			<br/><br/><br/>
-			Developed by <strong>StoneAge</strong> technologies.
+			<br/><br/>
+			<br/>
+			 v0.9.1 - Developed by <strong>StoneAge</strong> technologies.
 		</div>
     </div>
 		
@@ -105,14 +106,17 @@
 	<script src="libs/knockout.js"></script>
 	<script src="libs/bootstrap.min.js"></script>
 
+	<!-- Service Imports -->
+	<script src="scripts/viewService.js"></script>
+	
 	<!-- View Model Imports -->
 	<script src="scripts/viewModel.js"></script>
 	<!-- Seed Import -->
 	<!--<script src="scripts/socialSharing.js"></script>-->
-	<script src="scripts/WebHelper.js"></script>
-	<script src="scripts/PrefsHelper.js"></script>
-	<script src="scripts/app.js"></script>
-	<script src="scripts/main.js"></script>
+	<script src="scripts/001_WebHelper.js"></script>
+	<script src="scripts/002_PrefsHelper.js"></script>
+	<script src="scripts/998_app.js"></script>
+	<script src="scripts/999_main.js"></script>
 
 	<script type="text/javascript">
 	
