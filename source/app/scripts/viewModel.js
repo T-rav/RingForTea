@@ -19,8 +19,8 @@
 					}, 5100);
 					
 					// http://www.raymondcamden.com/2014/6/23/Cordova-Media-API-Example
-					var file = "/android_asset/www/audio/2.mp3";
-					self.viewService.playAudio(file, self);
+					//var file = "/android_asset/www/audio/2.mp3";
+					//self.viewService.playAudio(file, self);
 				}catch(e){
 					alert(e);
 				}
