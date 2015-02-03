@@ -24,8 +24,12 @@ ViewService.prototype = {
 
 	},
 	showAdd:function(){
-		// show the nasty add
-		if(AdMob) AdMob.showInterstitial();
+		try{
+			// show the nasty add
+			if(AdMob) AdMob.showInterstitial();
+		}catch(e){
+			alert(e);
+		}
 	}
 };
 	
