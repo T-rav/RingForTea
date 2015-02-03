@@ -7,7 +7,11 @@
 			var viewService = new ViewService();
             var viewModel = new ViewModel(viewService);
             this.bindApp(viewModel);
-			this.configureAds();
+			try{
+				this.configureAds();
+			}catch(e){
+				alert("LOAD " + e);
+			}
         },
         bindApp:function(viewModel){
             

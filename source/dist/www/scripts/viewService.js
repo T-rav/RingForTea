@@ -19,17 +19,15 @@ ViewService.prototype = {
 			setTimeout(function() {
 				my_media.stop();
 				my_media.release();
-				this.showAdd();
+				try{
+					alert("AD");
+					// show the nasty add
+					if(AdMob) AdMob.showInterstitial();
+				}catch(e){
+					alert(e);
+				}
 			}, 5000);
 
-	},
-	showAdd:function(){
-		try{
-			// show the nasty add
-			if(AdMob) AdMob.showInterstitial();
-		}catch(e){
-			alert(e);
-		}
 	}
 };
 	
