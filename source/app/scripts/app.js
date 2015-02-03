@@ -7,6 +7,7 @@
 			var viewService = new ViewService();
             var viewModel = new ViewModel(viewService);
             this.bindApp(viewModel);
+			this.configureAds();
         },
         bindApp:function(viewModel){
             
@@ -26,7 +27,21 @@
             if (bottomListTop <= lastItemBottom) {
                 bottomList.css("position", "relative");
             }
-        }
+        },
+		configureAds : function(){
+			// https://github.com/floatinghotpot/cordova-admob-pro
+			var admobid = {};
+			if( /(android)/i.test(navigator.userAgent) ) { // for android
+				admobid = {
+					banner: 'ca-app-pub-7845656758279006/8746463976',
+					interstitial: 'ca-app-pub-7845656758279006/1223197173'
+				};
+			}
+			
+			// load for later ;)
+			if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+			
+		}
     };
 
     document.addEventListener("deviceready", function() {

@@ -17,4 +17,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="AdMob">
+        <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

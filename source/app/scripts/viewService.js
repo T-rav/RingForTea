@@ -19,7 +19,14 @@ ViewService.prototype = {
 			setTimeout(function() {
 				my_media.stop();
 				my_media.release();
+				this.showAdd();
 			}, 5000);
 
-		}
-	};
+	},
+	showAdd:function(){
+		// show the nasty add
+		if(AdMob) AdMob.showInterstitial();
+	}
+};
+	
+	

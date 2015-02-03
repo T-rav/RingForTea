@@ -15,6 +15,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/com.google.cordova.admob/www/AdMob.js",
+        "id": "com.google.cordova.admob.AdMob",
+        "clobbers": [
+            "window.AdMob"
+        ]
+    },
+    {
         "file": "plugins/org.apache.cordova.file/www/DirectoryEntry.js",
         "id": "org.apache.cordova.file.DirectoryEntry",
         "clobbers": [
@@ -165,7 +172,10 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.media": "0.2.15",
-    "org.apache.cordova.file": "1.3.2"
+    "com.google.cordova.admob": "2.6.3",
+    "org.apache.cordova.file": "1.3.2",
+    "com.google.playservices": "19.0.0",
+    "com.rjfun.cordova.extension": "1.0.6"
 }
 // BOTTOM OF METADATA
 });
